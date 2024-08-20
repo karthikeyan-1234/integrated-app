@@ -1,7 +1,8 @@
 <div class="button-container">
-  <button mat-raised-button color="primary">
+  <button mat-raised-button color="primary" (click)="fileInput.click()">
     <mat-icon>cloud_upload</mat-icon> Upload License
   </button>
+  <input type="file" #fileInput accept=".lic" style="display:none" (change)="onFileSelected($event)">
   <button mat-raised-button color="accent"     (click)="openLicensePopup()"
   >
     <mat-icon>add_circle</mat-icon> Create License

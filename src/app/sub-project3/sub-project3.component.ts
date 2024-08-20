@@ -62,4 +62,20 @@ export class SubProject3Component implements OnInit {
     }
   }
 
+  // Method to handle file selection
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+
+    if (file) {
+      // Check if the selected file is a .lic file
+      const fileExtension = file.name.split('.').pop();
+      if (fileExtension === 'lic') {
+        console.log('Selected file:', file.name);
+        // Process the file here, e.g., upload it to a server
+      } else {
+        console.error('Invalid file type. Please select a .lic file.');
+      }
+    }
+  }
+
 }
