@@ -1,0 +1,17 @@
+.full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px; /* Add some margin to prevent it from sticking to the edge */
+    color: #000; /* Set button color */
+  }
+  
+  mat-dialog-title {
+    position: relative;
+    padding-right: 48px; /* Space for the close button */
+  }

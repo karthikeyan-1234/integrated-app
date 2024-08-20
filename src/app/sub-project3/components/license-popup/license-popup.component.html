@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>License Information</h2>
+
+<mat-dialog-content>
+  <form #licenseForm="ngForm">
+
+    <!-- License Name -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>License Name</mat-label>
+      <input matInput [(ngModel)]="license.LicenseName" name="LicenseName" required>
+    </mat-form-field>
+
+    <!-- Max Users -->
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Max Users</mat-label>
+        <input matInput [(ngModel)]="license.maxUsers" name="maxUsers" type="number" required>
+      </mat-form-field>
+  
+      <!-- Valid Upto -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Valid Upto</mat-label>
+        <input matInput [(ngModel)]="license.validUpto" name="validUpto" type="date" required>
+      </mat-form-field>
+  
+      <!-- Domain -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Domain</mat-label>
+        <input matInput [(ngModel)]="license.domain" name="domain" required>
+      </mat-form-field>
+  
+      <!-- Is Active -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Is Active</mat-label>
+        <mat-select [(ngModel)]="license.IsActive" name="IsActive" required>
+          <mat-option [value]="true">Yes</mat-option>
+          <mat-option [value]="false">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <!-- Uploaded Date -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Uploaded Date</mat-label>
+        <input matInput [(ngModel)]="license.UploadedDate" name="UploadedDate" type="date" required>
+      </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" (click)="downloadLicense()">Download Encrypted License</button>
+</mat-dialog-actions>

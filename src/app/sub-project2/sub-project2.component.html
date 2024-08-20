@@ -1,0 +1,51 @@
+<table mat-table [dataSource]="licenses" class="mat-elevation-z8">
+
+    <!-- License Name Column -->
+    <ng-container matColumnDef="LicenseName">
+      <th mat-header-cell *matHeaderCellDef> License Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.LicenseName}} </td>
+    </ng-container>
+  
+    <!-- Max Users Column -->
+    <ng-container matColumnDef="maxUsers">
+      <th mat-header-cell *matHeaderCellDef> Max Users </th>
+      <td mat-cell *matCellDef="let element"> {{element.maxUsers}} </td>
+    </ng-container>
+  
+    <!-- Valid Upto Column -->
+    <ng-container matColumnDef="validUpto">
+      <th mat-header-cell *matHeaderCellDef> Valid Upto </th>
+      <td mat-cell *matCellDef="let element"> {{element.validUpto | date: 'medium'}} </td>
+    </ng-container>
+  
+    <!-- Domain Column -->
+    <ng-container matColumnDef="domain">
+      <th mat-header-cell *matHeaderCellDef> Domain </th>
+      <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
+    </ng-container>
+  
+    <!-- Is Active Column -->
+    <ng-container matColumnDef="IsActive">
+      <th mat-header-cell *matHeaderCellDef> Is Active </th>
+      <td mat-cell *matCellDef="let element"> {{element.IsActive}} </td>
+    </ng-container>
+  
+    <!-- Uploaded Date Column -->
+    <ng-container matColumnDef="UploadedDate">
+      <th mat-header-cell *matHeaderCellDef> Uploaded Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.UploadedDate | date: 'medium'}} </td>
+    </ng-container>
+  
+    <!-- Action Column (Delete Button) -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button (click)="deleteLicense(element)">Delete</button>
+      </td>
+    </ng-container>
+  
+    <!-- Header and Row Declarations -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
